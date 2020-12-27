@@ -1,6 +1,8 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
+import requests
+import bs4 as bs4
 PORT = int(os.environ.get('PORT', 5000))
 
 # Enable logging
