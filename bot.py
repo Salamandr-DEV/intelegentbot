@@ -10,8 +10,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 TOKEN = '1459263548:AAFlanV0Rhd8GB-0uwpZYRibSk07RYSmPIE'
 
-# Define a few command handlers. These usually take the two arguments update and
-# context. Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
     """Send a message when the command /start is issued."""
     update.message.reply_text('Hi!')
@@ -30,9 +28,6 @@ def error(update, context):
 
 def main():
     """Start the bot."""
-    # Create the Updater and pass it your bot's token.
-    # Make sure to set use_context=True to use the new context based callbacks
-    # Post version 12 this will no longer be necessary
     updater = Updater(TOKEN, use_context=True)
 
     # Get the dispatcher to register handlers
@@ -53,10 +48,6 @@ def main():
                           port=int(PORT),
                           url_path=TOKEN)
     updater.bot.setWebhook('https://intelegentbot.herokuapp.com/' + TOKEN)
-
-    # Run the bot until you press Ctrl-C or the process receives SIGINT,
-    # SIGTERM or SIGABRT. This should be used most of the time, since
-    # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
 
 if __name__ == '__main__':
