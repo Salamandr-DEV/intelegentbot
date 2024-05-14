@@ -10,7 +10,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-TOKEN = '1459263548:AAFlanV0Rhd8GB-0uwpZYRibSk07RYSmPIE'
+TOKEN = ''
 
 def parse_searching(filename):
     text = filename
